@@ -10,9 +10,24 @@
        $scope.impressoesExemploTres = [{id: 'model3' , nome:'Canecas', descricao:'Fazemos diversas canecas e copos de todos os gostos.', imagemUrl: 'img/model3.jpg' }]
        $scope.impressoesExemploQuatro = [{id: 'model4' , nome:'Tipos de Dados', descricao:'Com muito estilo e design, sempre com qualidade.', imagemUrl: 'img/model4.jpg' }]
 
+       $scope.autenticaAdm = function(){
 
-         
+          usuarioAdm = "admin"
+          senhaAdm = "admin"
+
+          if(usuarioAdm === $scope.usuario && senhaAdm === $scope.senha){
+
+            window.location="indexLogado.html"
+
+          }else{
+
+            $scope.resultadoInfo = "Usuário ou Senha errado. Tente novamente!"
+
+          }
+
+       }
+
+       
     }]);
-
 
   })();
