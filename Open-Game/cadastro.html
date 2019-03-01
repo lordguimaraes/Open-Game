@@ -1,10 +1,6 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="openGameApp">
 
-<!doctype html>
-<html lang="en">
 <head>
 
   <meta charset="utf-8">
@@ -19,9 +15,10 @@
 
   <!-- Custom styles for this template -->
   <link href="css/estiloIndex.css" rel="stylesheet">
+  <link href="css/styleForms.css" rel="stylesheet">
+
 
 </head>
-<body>
 
 <body ng-controller="UserCtrl">
 
@@ -44,14 +41,35 @@
             <a class="nav-link" href="login.html">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cadastro.html">Cadastro</a> 
+            <a class="nav-link" href="#">Cadastro</a> 
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-<main class="my-form">
+  <!-- Page Content -->
+  <div class="container">
+
+    
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+
+      <div ng-repeat="atributo in logoMarca">
+
+          <img ng-src="{{atributo.imagemUrl}}" alt="Logomarca da OPEN GAME" title="Logomarca da OPEN GAME">
+
+      </div>
+      
+
+      <h1 class="display-3">OPEN GAME - Impressões 3D</h1>
+      <p class="lead"><p><strong>Cadastre-se para fazer seu pedido!</strong> </p>
+    </header>
+
+    <!-- Page Features -->
+  
+
+     <main class="my-form">
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -129,7 +147,13 @@
     </div>
 
 </main>
-<!-- Footer -->
+
+
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; OPEN GAME 2019</p>
@@ -143,6 +167,6 @@
   <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
   <script src="js/openGameApp.js"></script>
 
-
 </body>
+
 </html>
