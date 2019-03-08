@@ -37,11 +37,9 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cadastro</a> 
+            <a class="nav-link" href="pedido.html">Faça seu Pedido</a> 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="empresa.html">Empresa</a> 
@@ -77,15 +75,15 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">CADASTRO</div>
+                        <div class="card-header">PEDIDO</div>
                         <div class="card-body">
                             <form name="my-form" onsubmit="return validform()" action="#" method="">
-                                <div class="form-group row">
+                              <!--   <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Nome completo</label>
                                     <div class="col-md-6">
                                         <input type="text" id="full_name" class="form-control" name="full-name">
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
@@ -94,12 +92,12 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                               <!--  <div class="form-group row">
                                     <label for="user_name" class="col-md-4 col-form-label text-md-right">Usuário</label>
                                     <div class="col-md-6">
                                         <input type="text" id="user_name" class="form-control" name="username">
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Telefone</label>
@@ -136,9 +134,18 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1"></label>
+                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva a cor, largura x altura x profundidade em centímetros e a forma do objeto. (Ex: Branco, 10 x 17 x 5, Mão Humana)"></textarea>
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleFormControlFile1">Imagem de Referência</label>
+                                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                </div>
+
                                     <div class="col-md-6 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
-                                        Registrar
+                                        Efetuar Pedido
                                         </button>
                                     </div>
                                 </div>
