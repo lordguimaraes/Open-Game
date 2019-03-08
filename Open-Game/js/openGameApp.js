@@ -10,6 +10,10 @@
        $scope.impressoesExemploTres = [{id: 'model3' , nome:'Canecas', descricao:'Fazemos diversas canecas e copos de todos os gostos.', imagemUrl: 'images/model3.jpg' }]
        $scope.impressoesExemploQuatro = [{id: 'model4' , nome:'Tipos de Dados', descricao:'Com muito estilo e design, sempre com qualidade.', imagemUrl: 'images/model4.jpg' }]
 
+       $scope.socioUm = [{id: 'socio1' , nome:'Fabrício Tarden', descricao:'Desenvolvedor', imagemUrl: 'images/socio1.png' }]
+       $scope.socioDois = [{id: 'socio2' , nome:'Gabriel Guimarães', descricao:'SCRUM Master', imagemUrl: 'images/socio2.png' }]
+       $scope.socioTres = [{id: 'socio3' , nome:'Guilherme Meyrelles', descricao:'Designer', imagemUrl: 'images/socio3.png' }]
+
        $scope.autenticaAdm = function(){
 
           usuarioAdm = "admin"
