@@ -16,6 +16,8 @@
   <!-- Custom styles for this template -->
   <link href="css/estiloIndex.css" rel="stylesheet">
 
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 
 <body ng-controller="UserCtrl">
@@ -71,7 +73,7 @@
     <!-- Page Features -->
     <div class="row text-center">
 
-      <div class="col-lg-3 col-md-6 mb-4" ng-repeat="atributo in impressoesExemploUm">
+      <div class="col-lg-3 col-md-6 mb-4" ng-repeat="atributo in socioUm">
         <div class="card h-100">
           <img class="card-img-top" ng-src="{{atributo.imagemUrl}}" alt="Imagem de uma Estrela Ninja em 3D" title="Estrela Ninja em 3D">
           <div class="card-body">
@@ -79,12 +81,12 @@
             <p class="card-text">{{atributo.descricao}}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Saiba Mais!</a>
+           <a href="https://www.linkedin.com/in/fabriciotarden/" target="_blank" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 mb-4" ng-repeat="atributo in impressoesExemploDois">
+      <div class="col-lg-3 col-md-6 mb-4" ng-repeat="atributo in socioDois">
         <div class="card h-100">
           <img class="card-img-top" ng-src="{{atributo.imagemUrl}}" alt="Imagens de Capas de Celulares em 3D" title="Capas de Celulares em 3D">
           <div class="card-body">
@@ -92,12 +94,12 @@
             <p class="card-text">{{atributo.descricao}}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Saiba Mais!</a>
+           <a href="https://www.linkedin.com/in/gabriel-guimar%C3%A3es-b95329123/" target="_blank" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 mb-4" ng-repeat="atributo in impressoesExemploTres">
+      <div class="col-lg-3 col-md-6 mb-4" ng-repeat="atributo in socioTres">
         <div class="card h-100">
           <img class="card-img-top" ng-src="{{atributo.imagemUrl}}" alt="Imagem de uma Caneca em 3D" title="Caneca em 3D">
           <div class="card-body">
@@ -105,12 +107,12 @@
             <p class="card-text">{{atributo.descricao}}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Saiba Mais!</a>
+            <a href="https://www.linkedin.com/in/guilherme-figueira-meyrelles-82ab32114/" target="_blank" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 mb-4" ng-repeat="atributo in impressoesExemploQuatro">
+      <!-- <div class="col-lg-3 col-md-6 mb-4" ng-repeat="atributo in impressoesExemploQuatro">
         <div class="card h-100">
           <img class="card-img-top" ng-src="{{atributo.imagemUrl}}" alt="Imagem de diversos tipos de Dados em 3D" title="Dados Diversos em 3D">
           <div class="card-body">
@@ -121,7 +123,7 @@
             <a href="#" class="btn btn-primary">Saiba Mais!</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
     <!-- /.row -->
