@@ -2,7 +2,6 @@ body {
   padding-top: 56px;
 }
 
-
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -20,3 +19,21 @@ body {
   background: #007bb5;
   color: white;
 }
+
+.h4, h4 {
+
+  font-size: 1.3rem;
+
+}
+
+.my-form {
+    padding-bottom: 25px;
+
+}
+
+.card-header {
+
+  background-color: #e9ecef;
+
+}
+
