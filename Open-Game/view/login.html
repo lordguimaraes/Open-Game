@@ -20,6 +20,9 @@
             <a class="nav-link" href="#!/cadastro">Cadastro</a> 
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#!/pedido">Faça Seu Pedido</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#!/empresa">Empresa</a> 
           </li>
         </ul>
@@ -40,14 +43,14 @@
 
 				<form class="login100-form validate-form">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Usuário</span>
-						<input class="input100" type="text" name="username" ng-model="usuario">
+						<span class="label-input100">E-mail</span>
+						<input class="input100" type="text" name="email" ng-model="email">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Senha</span>
-						<input class="input100" type="password" name="pass" ng-model="senha">
+						<input class="input100" type="password" name="senha" ng-model="senha">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -61,7 +64,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" ng-click="login()">
 							Login
 						</button>
 					</div>
