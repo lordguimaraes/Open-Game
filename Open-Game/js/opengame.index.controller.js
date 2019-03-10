@@ -1,4 +1,4 @@
-angular.module('app').controller('homeCtrl', function($scope) {
+angular.module('app').controller('indexCtrl', function($scope) {
 
     $scope.logoMarca = [{id: 'logo' , nome:'logo - open game', descricao:'logo', imagemUrl: 'images/logo.png' }]
     $scope.impressoesExemploUm = [{id: 'model1' , nome:'Estrela Ninja', descricao:'Fazemos da cor e o modelo desejado.', imagemUrl: 'images/model1.jpg' }]
