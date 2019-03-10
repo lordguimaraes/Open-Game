@@ -25,6 +25,13 @@
           <li class="nav-item">
             <a class="nav-link" href="#!/empresa">Empresa</a> 
           </li>
+
+          <li class="nav-item" ng-show="firebaseUser"> 
+
+           <a class="nav-link" href="#!/" ng-click="authObj.$signOut()">Sair</a>
+
+          </li>
+
         </ul>
       </div>
     </div>
@@ -64,7 +71,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" ng-click="login()">
+						<button class="login100-form-btn" href="#!/pedido" ng-click="login()">
 							Login
 						</button>
 					</div>
