@@ -1,14 +1,17 @@
-angular.module('app').config(function ($routeProvider){
-	$routeProvider.when("/", {
+angular.module('app').config(function ($stateProvider, $urlRouterProvider){
+	$stateProvider.state("home", {
+		url: '/',
 		templateUrl: "view/home.html",
 		controller: "homeCtrl"
 	});
-	$routeProvider.when("/login", {
+	$stateProvider.state("login", {
+		url: '/login',
 		templateUrl: "view/login.html",
 		controller: "loginCtrl"
 		
 	});
-	$routeProvider.when("/pedido", {
+	$stateProvider.state("pedido", {
+		url: '/pedido',
 		templateUrl: "view/pedido.html",
 		controller: "pedidoCtrl",
 		resolve: {
@@ -17,36 +20,48 @@ angular.module('app').config(function ($routeProvider){
       "currentAuth": ["Auth", function(Auth) {
         // $requireSignIn returns a promise so the resolve waits for it to complete
         // If the promise is rejected, it will throw a $routeChangeError (see above)
+        
         return Auth.$requireSignIn();
+        
+
       }]
     }
 		
 	});
-	$routeProvider.when("/cadastro", {
+	$stateProvider.state("cadastro", {
+		url: '/cadastro',
 		templateUrl: "view/cadastro.html",
 		controller: "cadastroCtrl"
 		
 	});
-	$routeProvider.when("/empresa", {
+	$stateProvider.state("empresa", {
+		url: '/empresa',
 		templateUrl: "view/empresa.html",
 		controller: "empresaCtrl"
 		
 	});
-	$routeProvider.otherwise({
-	controller : function(){
-       window.location.replace('view/naoencontrada.html');
-    }, 
-    template : "<div></div>"
-	});
+	$urlRouterProvider.otherwise('/')
+	
 
 });
 
-angular.module('app').run(["$rootScope", "$location", function($rootScope, $location) {
-  $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
+// angular.module('app').run(["$rootScope", "$location", function($rootScope, $location) {
+//   $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
+//     // We can catch the error thrown when the $requireSignIn promise is rejected
+//     // and redirect the user back to the home page
+//     if (error === "AUTH_REQUIRED") {
+//       $location.path("/login");
+//     }
+//   });
+// }]);
+
+angular.module('app').run(["$rootScope", "$state", function($rootScope, $state) {
+  $rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
     // We can catch the error thrown when the $requireSignIn promise is rejected
     // and redirect the user back to the home page
+    console.log('aqui')
     if (error === "AUTH_REQUIRED") {
-      $location.path("/login");
+      $state.go("/login");
     }
   });
 }]);
