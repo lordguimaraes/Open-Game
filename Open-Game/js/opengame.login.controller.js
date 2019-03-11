@@ -1,26 +1,20 @@
-angular.module('app').controller('loginCtrl', function($scope, $firebaseAuth) {
+angular.module('app').controller( 'loginCtrl', ['$scope', '$state', '$firebaseAuth', function($scope, $state, $firebaseAuth) {
 
-
+   console.log('firebase: ', $firebaseAuth)
+   console.log('$state: ', $state)
 	var auth = $firebaseAuth();
 	
 	$scope.login = function (){
 		auth.$signInWithEmailAndPassword($scope.email, $scope.senha)
 		.then(function(firebaseUser){
-			console.log(firebaseUser)
+			console.log('firebase: ', firebaseUser)
+			$state.go('home')
 
 		}).catch(function(error){
 			console.log(error)
 		})
 
-	auth.$onAuthStateChanged(function(firebaseUser) {
-	  	
-	  	$scope.firebaseUser = firebaseUser;
-
-	});
-
-
 	}
 
 	
-	
-});
+}]);

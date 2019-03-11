@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute', 'firebase']);
+angular.module('app', ['ui.router', 'firebase']);
 
 var config = {
     apiKey: "AIzaSyA4JLbYlg-ItT-kmRdgR7CNsOrBVA2swGs",
