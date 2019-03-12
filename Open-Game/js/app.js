@@ -1,11 +1,11 @@
 angular.module('app', ['ui.router', 'firebase']);
 
 var config = {
-    apiKey: "AIzaSyA4JLbYlg-ItT-kmRdgR7CNsOrBVA2swGs",
-    authDomain: "teste-projeto-c2b9b.firebaseapp.com",
-    databaseURL: "https://teste-projeto-c2b9b.firebaseio.com",
-    projectId: "teste-projeto-c2b9b",
-    storageBucket: "teste-projeto-c2b9b.appspot.com",
-    messagingSenderId: "218855459470"
+    apiKey: "AIzaSyDeko7ZdGZhuWh8PsejcdXHUxH5eKjI50A",
+    authDomain: "open-game-861b3.firebaseapp.com",
+    databaseURL: "https://open-game-861b3.firebaseio.com",
+    projectId: "open-game-861b3",
+    storageBucket: "",
+    messagingSenderId: "574595088527"
   };
   firebase.initializeApp(config);
