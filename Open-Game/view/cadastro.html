@@ -10,7 +10,8 @@
       
 
       <h1 class="display-3">OPEN GAME - Impressões 3D</h1>
-      <p class="lead"><strong></strong> </p>
+      <p class="lead">Faça agora mesmo seu cadastro e fique por dentro de promoções e dicas exclusivas!
+<strong>CADASTRE-SE GRÁTIS na OPEN GAME!</strong> Receba em primeira mão ofertas incríveis e dicas feitas especialmente pra te ajudar a conhecer o mundo 3D.</p><br><p class="lead">Veja como é fácil fazer o seu cadastro. Basta você digitar seu e-mail, sua senha e clicar em cadastrar. A partir do momento que você estiver cadastrado, aí sim você poderá fazer pedidos na OPEN GAME!</p>
     </header>
 
      <main class="my-form">
@@ -20,45 +21,25 @@
                     <div class="card">
                         <div class="card-header">CADASTRO</div>
                         <div class="card-body">
-                            <form name="my-form" onsubmit="return validform()" action="#" method="">
-
-                                    <div class="form-group row">
-                                        <label for="full_name" class="col-md-4 col-form-label text-md-right">Nome:</label>
-                                        <div class="col-md-6">
-                                            <input type="text" id="full_name" class="form-control" name="full-name">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="full_name" class="col-md-4 col-form-label text-md-right">Sobrenome:</label>
-                                        <div class="col-md-6">
-                                            <input type="text" id="full_name" class="form-control" name="full-name">
-                                        </div>
-                                    </div>
+                            <form name="my-form" ng-submit="cadastrar()" action="#" method="">
 
                                     <div class="form-group row">
                                         <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail:</label>
                                         <div class="col-md-6">
-                                            <input type="text" id="email_address" class="form-control" name="email-address">
+                                            <input type="email" id="email" class="form-control" name="email" ng-model="email">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="user_name" class="col-md-4 col-form-label text-md-right">Senha:</label>
                                         <div class="col-md-6">
-                                            <input type="text" id="user_name" class="form-control" name="username">
+                                            <input type="password" id="senha" class="form-control" name="senha" ng-model="senha">
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
-                                        <label for="phone_number" class="col-md-4 col-form-label text-md-right">Confirme a senha:</label>
-                                        <div class="col-md-6">
-                                            <input type="text" id="phone_number" class="form-control">
-                                        </div>
-                                    </div>
                                         <div class="col-md-6 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
-                                            Registrar
+                                            <button type="submit" id="idSubmit" class="btn btn-primary">
+                                            Cadastrar
                                             </button>
                                         </div>
                                 </form>
