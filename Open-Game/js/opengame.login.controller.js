@@ -10,9 +10,11 @@ angular.module('app').controller( 'loginCtrl', ['$scope', '$state', '$firebaseAu
 			$state.go('home')
 
 		}).catch(function(error){
+
 			console.log(error)
 
 			$scope.mensagem = "Usuário ou senha errado. Tente novamente!";
+			$scope.erroMensagem = "[Erro 400 - Dados Incorretos]";
 
 		})
 
