@@ -32,10 +32,25 @@ angular.module('app').controller( 'cadastroCtrl', ['$scope', '$state', '$firebas
   		  dormirSegundos();
   
   		  $state.go('home');
+
+  		  var emailDestino = $scope.email;
+		  console.log(emailDestino);
+
+			// Email.send({
+			    
+			//     SecureToken : "",
+			//     To : emailDestino,
+			//     From : "fabricio.tarden@al.infnet.edu.br",
+			//     Subject : "OPEN GAME - Impressões 3D - Cadastro",
+			//     Body : "Parabéns! Seu cadastro foi realizado com sucesso."
+
+		 //  }).then(
+			//   message => console.log(message)
+		 //  );
   		  
- 		 }).catch(function(error) {
+ 		  }).catch(function(error) {
   		  console.error("Error: ", error);
- 		 });
+ 		  });
 
 
 	}
