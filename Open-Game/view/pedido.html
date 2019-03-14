@@ -1,11 +1,9 @@
-
   <div>
   <!-- Navigation -->
   
   <!-- Page Content -->
   <div class="container">
-
-    
+  
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
 
@@ -15,15 +13,13 @@
 
       </div>
       
-
       <h1 class="display-3">OPEN GAME - Impressões 3D</h1>
       <p class="lead"><p><strong></strong> </p>
     </header>
 
     <!-- Page Features -->
-  
 
-     <main class="my-form">
+    <main class="my-form">
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -34,66 +30,61 @@
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Nome:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full-name" ng-model="nome">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Sobrenome:</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full-name" ng-model="sobrenome">
+                                        <input type="text" id="full_name" class="form-control" name="full-name" ng-model="nome" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Sobrenome:</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="full_name" class="form-control" name="full-name" ng-model="sobrenome" required>
+                                    </div>
+                                </div>
+                              
+
+                                <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="email_address" class="form-control" name="email-address" ng-model="email">
+                                        <input type="text" id="email_address" class="form-control" name="email-address" ng-model="email" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Telefone:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="phone_number" class="form-control" ng-model="telefone">
+                                        <input type="text" id="phone_number" class="form-control" ng-model="telefone" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="present_address" class="col-md-4 col-form-label text-md-right">CEP:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control" ng-model="cep">
-                                    </div>
-                                </div>
-
-                                 <div class="form-group row">
-                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Cidade:</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control" ng-model="cidade">
+                                        <input type="text" id="present_address" class="form-control" ng-model="cep" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="present_address" class="col-md-4 col-form-label text-md-right">Rua:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control" ng-model="rua">
+                                        <input type="text" id="present_address" class="form-control" ng-model="rua" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="present_address" class="col-md-4 col-form-label text-md-right">Complemento:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control" placeholder="Número da casa, apartamento e etc." ng-model="complemento">
+                                        <input type="text" id="present_address" class="form-control" ng-model="complemento" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1"></label>
-                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva a cor, largura x altura x profundidade em centímetros e a forma do objeto. (Ex: Branco, 10 x 17 x 5, Mão Humana)" ng-model="observacoes"></textarea>
+                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descreva a cor, largura x altura x profundidade em centímetros e a forma do objeto. (Ex: Branco, 10 x 17 x 5, Mão Humana)" ng-model="observacoes" required></textarea>
                                 </div>
 
                                 <div class="form-group">
                                   <label for="exampleFormControlFile1">Imagem de Referência</label>
-                                  <input ngf-select="selectFile($file)" accept="image/*" type="file" class="form-control-file" id="exampleFormControlFile1" ng-model="data.foto">
+                                  <input ngf-select="selectFile($file)" accept="image/*" type="file" class="form-control-file" id="exampleFormControlFile1" ng-model="data.foto" required>
                                 </div>
 
                                 <div class="col-md-2">
