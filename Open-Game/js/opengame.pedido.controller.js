@@ -11,7 +11,7 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
     	console.log($scope.fileList);
     }
 
-    $scope.uploadFile = function(usuarioLogado, nome,sobrenome, email, telefone, cep, rua, complemento, observacoes){
+    $scope.uploadFile = function(numPedido, usuarioLogado, nome,sobrenome, email, telefone, cep, rua, complemento, observacoes){
 	    
         console.log(complemento);
 
@@ -38,7 +38,7 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
             // var imageUrl = uploadTarefa.snapshot.downloadURL;
             var imageName = snapshot.metadata.name;
 
-            var usuario = {[usuarioLogado] : { nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagagemUsuario:imageName}};
+            var usuario = {[usuarioLogado] : {numPedidoUsuario: numPedido, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagagemUsuario:imageName}};
 
             console.log(usuario);
 
@@ -55,6 +55,8 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
             }).then(function(ref){
                 urls.$indexFor(id);
             });
+
+            numPedido+=1;
 
             uploadTarefa.$error(function(error){
                 console.log(error)
@@ -85,8 +87,10 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
         var complemento = $scope.complemento;
         var observacoes = $scope.observacoes;
         
+        $scope.numPedido = 0;
 
-        $scope.uploadFile(userName, nome, sobrenome, email, telefone, cep, rua, complemento, observacoes);
+
+        $scope.uploadFile(numPedido, userName, nome, sobrenome, email, telefone, cep, rua, complemento, observacoes);
 
 	});
 

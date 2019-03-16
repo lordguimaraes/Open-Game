@@ -24,6 +24,20 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider){
     }
 		
 	});
+	$stateProvider.state("meuPedido", {
+		url: '/meuPedido',
+		templateUrl: "view/meuPedido.html",
+		controller: "pedidoCtrl",
+		resolve: {
+
+      "currentAuth": ["Auth", function(Auth) {
+        
+        return Auth.$requireSignIn();
+        
+      }]
+    }
+		
+	});
 	$stateProvider.state("cadastro", {
 		url: '/cadastro',
 		templateUrl: "view/cadastro.html",
