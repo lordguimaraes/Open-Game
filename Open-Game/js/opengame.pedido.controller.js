@@ -1,6 +1,9 @@
-angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$firebaseAuth','$firebaseArray', function($scope, $firebaseStorage, $firebaseAuth, $firebaseArray) {
+angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$firebaseAuth','$firebaseArray', '$state', '$window', function($scope, $firebaseStorage, $firebaseAuth, $firebaseArray, $state, $window) {
 
     $scope.logoMarca = [{id: 'logo' , nome:'logo - open game', descricao:'logo', imagemUrl: './images/logo.png' }]
+    var numPedido = 0;
+    var urlImagem = '';
+    var nomeDaImagem = '';
 
     var uploadBar = document.getElementById("uploadBar");
     $scope.fileList = null;
@@ -33,17 +36,23 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
 
             console.log(snapshot);
 
-            //var imageUrl = snapshot.downloadURL;
-            // var imageUrl = snapshot.ref.getDownloadURL()
-            // var imageUrl = uploadTarefa.snapshot.downloadURL;
-            var imageName = snapshot.metadata.name;
+        });
 
-            var usuario = {[usuarioLogado] : {numPedidoUsuario: numPedido, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagagemUsuario:imageName}};
+        console.log(nomeDaImagem);
+
+         var starsRef = storageRef.child('Pedidos/' + $scope.fileList.name);
+         $scope.storage = $firebaseStorage(storageRef);
+
+         nomeDaImagem = $scope.fileList.name
+
+           $scope.storage.$getDownloadURL().then(function(url) {
+
+            urlImagem = url;
+
+            var usuario = {[usuarioLogado] : {numPedidoUsuario: numPedido,usuarioSolicitante: usuarioLogado, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagemUrl: urlImagem, imagemNome: nomeDaImagem}};
 
             console.log(usuario);
 
-            var starsRef = storageRef.child('Pedidos/' + $scope.fileList.name);
-           
             var ref = firebase.database().ref('Prints');
             var urls = $firebaseArray(ref);
             var id = ref.key;
@@ -56,14 +65,13 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
                 urls.$indexFor(id);
             });
 
-            numPedido+=1;
-
             uploadTarefa.$error(function(error){
                 console.log(error)
             });
 
     	});
 
+             
     }; 
 
     $scope.enviar = function(){
@@ -86,12 +94,14 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
         var rua = $scope.rua;
         var complemento = $scope.complemento;
         var observacoes = $scope.observacoes;
+
+        numPedido = Math.floor(Math.random() * 65536);
         
-        $scope.numPedido = 0;
-
-
         $scope.uploadFile(numPedido, userName, nome, sobrenome, email, telefone, cep, rua, complemento, observacoes);
+        numPedido++;
 
+     
+       
 	});
 
     }

@@ -27,7 +27,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider){
 	$stateProvider.state("meuPedido", {
 		url: '/meuPedido',
 		templateUrl: "view/meuPedido.html",
-		controller: "pedidoCtrl",
+		controller: "meuPedidoCtrl",
 		resolve: {
 
       "currentAuth": ["Auth", function(Auth) {

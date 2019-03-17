@@ -14,7 +14,7 @@
       </div>
       
       <h1 class="display-3">OPEN GAME - Impressões 3D</h1>
-      <p class="lead"><p><strong></strong> </p>
+      <p class="lead"><p> Quando seu pedido estiver pronto, você verá um link no campo<strong>"Pedido"</strong> para <i>download.</i></p>
     </header>
 
 <article>  
@@ -31,21 +31,24 @@
     <tr class="text-center">
       <th scope="col">N°</th>
       <th scope="col">Imagem de Referência</th>
-      <th scope="col">Status</th>
+      <th scope="col">Observações</th>
       <th scope="col">Pedido</th>
       <th scope="col">Conclusão</th>
     </tr>
   </thead>
   <tbody class="text-center">
-    <tr>
-      <th scope="row" ng-bind="numPedido"></th>
-      <td></td>
-      <td></td>
-      <td><a href="">Download</a></td>
+    <tr ng-repeat="item in list | filter:name" ng-if="item.usuario.admin.usuarioSolicitante === usuarioLogado">
+      <th scope="row">
+         {{item.usuario.admin.numPedidoUsuario}}
+      </th>
+      <td><a ng-href="{{item.usuario.admin.imagemUrl}}" target="_blank">{{item.usuario.admin.imagemNome}}</a>
+      </td>
+      <td>{{item.usuario.admin.observacoesUsuario}}</td>
+      <td ng-model="status">{{status}}</td>
 
-<td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
-  Concluir
-</button></td>
+      <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
+        Concluir
+      </button></td>
 
     </tr>
     
