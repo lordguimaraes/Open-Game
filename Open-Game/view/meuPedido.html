@@ -37,14 +37,14 @@
     </tr>
   </thead>
   <tbody class="text-center">
-    <tr ng-repeat="item in list | filter:name" ng-if="item.usuario.admin.usuarioSolicitante === usuarioLogado">
+    <tr ng-repeat="item in list | filter:name" ng-if="item.usuario.usuarioSolicitante === usuarioLogado">
       <th scope="row">
-         {{item.usuario.admin.numPedidoUsuario}}
+         {{item.usuario.numPedidoUsuario}} 
       </th>
-      <td><a ng-href="{{item.usuario.admin.imagemUrl}}" target="_blank">{{item.usuario.admin.imagemNome}}</a>
+      <td><a ng-href="{{item.usuario.imagemUrl}}" target="_blank">{{item.usuario.imagemNome}}</a>
       </td>
-      <td>{{item.usuario.admin.observacoesUsuario}}</td>
-      <td ng-model="status">{{status}}</td>
+      <td>{{item.usuario.observacoesUsuario}}</td>
+      <td>{{item.usuario.statusPedido}}</td>
 
       <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
         Concluir
@@ -74,6 +74,14 @@
     </div>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </article>  
 
 </div>
