@@ -13,7 +13,11 @@ angular.module('app').controller('meuPedidoCtrl', ['$scope','$firebaseStorage', 
     
         $scope.usuarioLogado = firebaseUser  && firebaseUser.email ?  firebaseUser.email.split('@')[0] : '';
 
+        console.log($scope.usuarioLogado);
+
     });
+
+    console.log($scope.usuarioLogado);
 
        var ref = firebase.database().ref('Prints');
        var list = $firebaseArray(ref);

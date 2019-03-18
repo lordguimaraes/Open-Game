@@ -4,6 +4,7 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
     var numPedido = 0;
     var urlImagem = '';
     var nomeDaImagem = '';
+    var status = "Em atendimento";
 
     var uploadBar = document.getElementById("uploadBar");
     $scope.fileList = null;
@@ -19,7 +20,7 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
         console.log(complemento);
 
         //Coloquei o '_' como escape para relacionar com o usuário que enviou o pedido   
-    	var storageRef = firebase.storage().ref('Pedidos/' + usuarioLogado + '_' + $scope.fileList.name);
+    	var storageRef = firebase.storage().ref('Pedidos/' + $scope.fileList.name);
     	var storage = $firebaseStorage(storageRef);
 	
     	var uploadTarefa = storage.$put($scope.fileList)
@@ -36,9 +37,7 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
 
             console.log(snapshot);
 
-        });
-
-        console.log(nomeDaImagem);
+            console.log(nomeDaImagem);
 
          var starsRef = storageRef.child('Pedidos/' + $scope.fileList.name);
          $scope.storage = $firebaseStorage(storageRef);
@@ -49,7 +48,7 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
 
             urlImagem = url;
 
-            var usuario = {[usuarioLogado] : {numPedidoUsuario: numPedido,usuarioSolicitante: usuarioLogado, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagemUrl: urlImagem, imagemNome: nomeDaImagem}};
+            var usuario = {numPedidoUsuario: numPedido, statusPedido: status, usuarioSolicitante: usuarioLogado, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagemUrl: urlImagem, imagemNome: nomeDaImagem};
 
             console.log(usuario);
 
@@ -69,6 +68,10 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
                 console.log(error)
             });
 
+
+        });
+
+        
     	});
 
              
