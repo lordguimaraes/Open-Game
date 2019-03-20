@@ -12,13 +12,11 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
     $scope.selectFile = function(file){
 
     	$scope.fileList = file;
-    	console.log($scope.fileList);
+    
     }
 
     $scope.uploadFile = function(numPedido, usuarioLogado, nome,sobrenome, email, telefone, cep, rua, complemento, observacoes){
 	    
-        console.log(complemento);
-
         //Coloquei o '_' como escape para relacionar com o usuário que enviou o pedido   
     	var storageRef = firebase.storage().ref('Pedidos/' + $scope.fileList.name);
     	var storage = $firebaseStorage(storageRef);
@@ -35,10 +33,6 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
     	uploadTarefa.$complete(function(snapshot){
     		console.log('Upload Completado');
 
-            console.log(snapshot);
-
-            console.log(nomeDaImagem);
-
          var starsRef = storageRef.child('Pedidos/' + $scope.fileList.name);
          $scope.storage = $firebaseStorage(storageRef);
 
@@ -49,8 +43,6 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
             urlImagem = url;
 
             var usuario = {numPedidoUsuario: numPedido, statusPedido: status, usuarioSolicitante: usuarioLogado, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagemUrl: urlImagem, imagemNome: nomeDaImagem};
-
-            console.log(usuario);
 
             var ref = firebase.database().ref('Prints');
             var urls = $firebaseArray(ref);
@@ -73,21 +65,18 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
 
         
     	});
-
-             
+     
     }; 
 
     $scope.enviar = function(){
 
-    	var authObj = $firebaseAuth();
-        
-    	authObj.$onAuthStateChanged(function(firebaseUser) {
-	  	
-	  	$scope.firebaseUser = firebaseUser;
-	
-	  	$scope.userName = firebaseUser  && firebaseUser.email ?  firebaseUser.email.split('@')[0] : '';
+    	$scope.obj = $firebaseAuth();
 
-        var userName = $scope.userName;
+        var usuarioSistema = $scope.obj.$getAuth();
+
+        $scope.logado =  usuarioSistema  && usuarioSistema.email ?  usuarioSistema.email.split('@')[0] : ''; 
+
+        var userName = $scope.logado;
         var nome = $scope.nome;
         var sobrenome = $scope.sobrenome;
         var email = $scope.email;
@@ -101,11 +90,8 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
         numPedido = Math.floor(Math.random() * 65536);
         
         $scope.uploadFile(numPedido, userName, nome, sobrenome, email, telefone, cep, rua, complemento, observacoes);
+        
         numPedido++;
-
-     
-       
-	});
 
     }
 
