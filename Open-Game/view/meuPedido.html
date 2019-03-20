@@ -20,7 +20,13 @@
 <article>  
 	<hgroup>
 
+    <br>
+<br>
+
+
 		<h2 class="text-center">Meus Pedidos</h2>
+
+<br>
 
 	</hgroup>
 
@@ -37,7 +43,7 @@
     </tr>
   </thead>
   <tbody class="text-center">
-    <tr ng-repeat="item in list | filter:name" ng-if="item.usuario.usuarioSolicitante === usuarioLogado">
+    <tr ng-repeat="item in list | filter:name" ng-if="item.usuario.usuarioSolicitante === logado">
       <th scope="row">
          {{item.usuario.numPedidoUsuario}} 
       </th>
@@ -74,9 +80,7 @@
     </div>
   </div>
 </div>
-<br>
-<br>
-<br>
+
 <br>
 <br>
 <br>

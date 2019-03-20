@@ -1,7 +1,7 @@
 angular.module('app').controller( 'menuCtrl', ['$scope', '$state', '$firebaseAuth', 'Auth', function($scope, $state, $firebaseAuth, Auth) {
 
-	var authObj = $firebaseAuth();
-	
+	let authObj = $firebaseAuth();
+
 	$scope.auth = Auth;
 
 	authObj.$onAuthStateChanged(function(firebaseUser) {
@@ -11,7 +11,7 @@ angular.module('app').controller( 'menuCtrl', ['$scope', '$state', '$firebaseAut
 	  	$scope.userName = firebaseUser  && firebaseUser.email ?  firebaseUser.email.split('@')[0] : '';
 
 	});
-	
+
+
 		
-	
 }]);
