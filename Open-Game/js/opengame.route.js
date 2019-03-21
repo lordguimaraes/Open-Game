@@ -50,6 +50,12 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider){
 		controller: "empresaCtrl"
 		
 	});
+	$stateProvider.state("pagamento", {
+		url: '/pagamento',
+		templateUrl: "view/pagamento.html",
+		controller: "meuPedidoCtrl"
+		
+	});
 	$urlRouterProvider.otherwise('/');
 
 });

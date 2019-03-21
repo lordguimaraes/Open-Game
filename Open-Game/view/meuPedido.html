@@ -39,6 +39,7 @@
       <th scope="col">Imagem de Referência</th>
       <th scope="col">Observações</th>
       <th scope="col">Pedido</th>
+      <th scope="col">Preço</th>
       <th scope="col">Conclusão</th>
     </tr>
   </thead>
@@ -51,6 +52,7 @@
       </td>
       <td>{{item.usuario.observacoesUsuario}}</td>
       <td>{{item.usuario.statusPedido}}</td>
+      <td>{{item.usuario.precoImpressao}}</td>
 
       <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
         Concluir
@@ -74,7 +76,7 @@
         Você aprova a impressão 3D do seu pedido?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success">Aprovar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="pagamento()">Aprovar</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Recusar</button>
       </div>
     </div>

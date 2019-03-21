@@ -1,4 +1,4 @@
-angular.module('app').controller('meuPedidoCtrl', ['$scope','$firebaseStorage', '$firebaseAuth','$firebaseArray', 'Auth', function($scope, $firebaseStorage, $firebaseAuth, $firebaseArray, Auth) {
+angular.module('app').controller('meuPedidoCtrl', ['$scope','$firebaseStorage', '$firebaseAuth','$firebaseArray', 'Auth', '$state', function($scope, $firebaseStorage, $firebaseAuth, $firebaseArray, Auth, $state) {
 
     $scope.logoMarca = [{id: 'logo' , nome:'logo - open game', descricao:'logo', imagemUrl: './images/logo.png' }]
     $scope.status = "Em atendimento";
@@ -13,5 +13,11 @@ angular.module('app').controller('meuPedidoCtrl', ['$scope','$firebaseStorage', 
        var listaPedidos = $firebaseArray(referencia);
 
        $scope.list = listaPedidos;
+
+
+    $scope.pagamento = function(){
+
+    	$state.go('pagamento');
+    }
 
 }]);
