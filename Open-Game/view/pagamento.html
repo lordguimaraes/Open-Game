@@ -1,10 +1,7 @@
   <div>
-  <!-- Navigation -->
-  
-  <!-- Page Content -->
+
   <div class="container">
   
-    <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
 
       <div ng-repeat="atributo in logoMarca">
@@ -43,36 +40,35 @@
                     <div class="card">
                         <div class="card-header">PAGAMENTO</div>
                         <div class="card-body">
-                           <form ng-submit="">
+                           <form ng-submit="aprovarPagamento()" method="post">
                         <div id="payment" class="form-group">
                             <p class="text-muted">Nome no cartão:</p>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Exemplo: JOSE L NETO BRAGANÇA" required minlength="4">
+                                <input type="text" class="form-control" placeholder="Exemplo: JOSE L NETO BRAGANÇA" required minlength="4" required>
                             </div>
                              <p class="text-muted">Número:</p>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX" pattern="\d{16}" required minlength="16" maxlength="16">
+                                <input type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX" pattern="\d{16}" required minlength="16" maxlength="16" required>
                             </div>
                             
                                  <p class="text-muted">Mês:</p>
                                  <div class="form-group">
-                                <input type="text" class="form-control" placeholder="MM" pattern="0[1-9]|1[0-2]" required minlength="2" maxlength="2">
+                                <input type="text" class="form-control" placeholder="MM" pattern="0[1-9]|1[0-2]" required minlength="2" maxlength="2" required>
                             </div>
                         
                                  <p class="text-muted">Ano:</p>
                                      <div class="form-group">
-                                <input type="text" class="form-control" placeholder="YYYY" pattern="20[0-9]{2}" required minlength="4" maxlength="4">
+                                <input type="text" class="form-control" placeholder="YYYY" pattern="20[0-9]{2}" required minlength="4" maxlength="4" required>
                             </div>
                           
                                 <p class="text-muted">Código de segurança:</p>
                                    <div class="form-group">
-                                <input type="text" class="form-control" placeholder="CVV" pattern="\d{3}" minlength="3" maxlength="3">
+                                <input type="text" class="form-control" placeholder="CVV" pattern="\d{3}" minlength="3" maxlength="3" required>
                                 </div>
                             </div>
 
-                            <button type="button" class="btn btn-success center-block">Pagar</button>
-                            <p class="text-success">{{message}}</p>
-
+                            <button type="submit" class="btn btn-success">Pagar</button>
+                                  
                         </div>
                     </form>
                         </div>

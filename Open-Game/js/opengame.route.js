@@ -53,7 +53,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider){
 	$stateProvider.state("pagamento", {
 		url: '/pagamento',
 		templateUrl: "view/pagamento.html",
-		controller: "meuPedidoCtrl"
+		controller: "pagamentoCtrl"
 		
 	});
 	$urlRouterProvider.otherwise('/');

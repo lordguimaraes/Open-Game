@@ -4,7 +4,7 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
     var numPedido = 0;
     var urlImagem = '';
     var nomeDaImagem = '';
-    var status = "Em atendimento";
+    var status = "Aguardando pagamento";
 
     var uploadBar = document.getElementById("uploadBar");
     $scope.fileList = null;
@@ -15,7 +15,7 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
     
     }
 
-    $scope.uploadFile = function(numPedido, usuarioLogado, nome,sobrenome, email, telefone, cep, rua, complemento, observacoes){
+    $scope.uploadFile = function(numPedido, usuarioLogado, nome,sobrenome, email, emailConfirma, telefone, cep, rua, complemento, observacoes){
 	    
         //Coloquei o '_' como escape para relacionar com o usuário que enviou o pedido   
     	var storageRef = firebase.storage().ref('Pedidos/' + $scope.fileList.name);
@@ -43,20 +43,20 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
             urlImagem = url;
             var preco = 'R$ 20,00'
 
-            var usuario = {numPedidoUsuario: numPedido, statusPedido: status, usuarioSolicitante: usuarioLogado, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagemUrl: urlImagem, imagemNome: nomeDaImagem, precoImpressao: preco};
-
             var ref = firebase.database().ref('Prints');
             var urls = $firebaseArray(ref);
-            var id = ref.key;
-            
-            urls.$add({
-               
-                    usuario
-                   
-            }).then(function(ref){
-                urls.$indexFor(id);
-            });
 
+            var chave = ref.push();
+            var chaveExclusiva = chave.key;
+
+            var usuario = {chaveUsuario: chaveExclusiva, numPedidoUsuario: numPedido, statusPedido: status, usuarioSolicitante: usuarioLogado, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: emailConfirma, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagemUrl: urlImagem, imagemNome: nomeDaImagem, precoImpressao: preco};
+            
+            chave.set({
+
+                usuario
+
+            });     
+                
             uploadTarefa.$error(function(error){
                 console.log(error)
             });
@@ -77,6 +77,8 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
 
         $scope.logado =  usuarioSistema  && usuarioSistema.email ?  usuarioSistema.email.split('@')[0] : ''; 
 
+        var emailConfirma = usuarioSistema.email; 
+
         var userName = $scope.logado;
         var nome = $scope.nome;
         var sobrenome = $scope.sobrenome;
@@ -90,7 +92,7 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
 
         numPedido = Math.floor(Math.random() * 65536);
         
-        $scope.uploadFile(numPedido, userName, nome, sobrenome, email, telefone, cep, rua, complemento, observacoes);
+        $scope.uploadFile(numPedido, userName, nome, sobrenome, email, emailConfirma, telefone, cep, rua, complemento, observacoes);
         
         numPedido++;
 

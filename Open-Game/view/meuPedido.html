@@ -14,7 +14,7 @@
       </div>
       
       <h1 class="display-3">OPEN GAME - Impressões 3D</h1>
-      <p class="lead"><p> Quando seu pedido estiver pronto, você verá um link no campo<strong> "Pedido"</strong> para <i>download.</i></p>
+      <p class="lead"><p>Após a confirmação do <strong>pagamento</strong>, você receberá seu pedido em 2 dias!</p>
     </header>
 
 <article>  
@@ -24,7 +24,7 @@
     <br>
 
 
-		<h2 class="text-center">Meus Pedidos</h2>
+		<h2 class="text-center"><img src="https://img.icons8.com/color/96/000000/shopping-cart-loaded.png">Meus Pedidos<img src="https://img.icons8.com/color/96/000000/shopping-cart-loaded.png"></h2>
 
 <br>
 <br>
@@ -38,7 +38,7 @@
       <th scope="col">N°</th>
       <th scope="col">Imagem de Referência</th>
       <th scope="col">Observações</th>
-      <th scope="col">Pedido</th>
+      <th scope="col">Status</th>
       <th scope="col">Preço</th>
       <th scope="col">Conclusão</th>
     </tr>
@@ -54,6 +54,7 @@
       <td>{{item.usuario.statusPedido}}</td>
       <td>{{item.usuario.precoImpressao}}</td>
 
+
       <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
         Concluir
       </button></td>
@@ -67,17 +68,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Aprovar Pedido</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Efetuar pagamento</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Você aprova a impressão 3D do seu pedido?
+        Você será direcionado para a página de pagamento.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="pagamento()">Aprovar</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Recusar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="pagamento()">OK</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
   </div>
