@@ -41,8 +41,9 @@ angular.module('app').controller('pedidoCtrl', ['$scope','$firebaseStorage', '$f
            $scope.storage.$getDownloadURL().then(function(url) {
 
             urlImagem = url;
+            var preco = 'R$ 20,00'
 
-            var usuario = {numPedidoUsuario: numPedido, statusPedido: status, usuarioSolicitante: usuarioLogado, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagemUrl: urlImagem, imagemNome: nomeDaImagem};
+            var usuario = {numPedidoUsuario: numPedido, statusPedido: status, usuarioSolicitante: usuarioLogado, nomeUsuario: nome, sobrenomeUsuario: sobrenome, emailUsuario: email, telefoneUsuario: telefone, cepUsuario: cep, ruaUsuario: rua, complementoUsuario: complemento, observacoesUsuario: observacoes, imagemUrl: urlImagem, imagemNome: nomeDaImagem, precoImpressao: preco};
 
             var ref = firebase.database().ref('Prints');
             var urls = $firebaseArray(ref);
