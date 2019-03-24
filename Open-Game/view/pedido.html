@@ -30,42 +30,42 @@
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Nome:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full-name" ng-model="nome" required>
+                                        <input type="text" placeholder="Jorge" pattern="[a-zA-Z\s]+$" class="form-control" ng-model="nome" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Sobrenome:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full-name" ng-model="sobrenome" required>
+                                        <input type="text" placeholder="Santos" pattern="[a-zA-Z\s]+$" class="form-control" ng-model="sobrenome" required>
                                     </div>
                                 </div>
                         
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Telefone:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="phone_number" class="form-control" ng-model="telefone" required>
+                                        <input type="text" placeholder="(xx) xxxx-xxxx" id="phone_number" class="form-control" ng-model="telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="present_address" class="col-md-4 col-form-label text-md-right">CEP:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control" ng-model="cep" required>
+                                        <input type="text" placeholder="xxxxx-xxx" pattern="[0-9]{5}-[0-9]{3}" id="present_address" class="form-control" ng-model="cep" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="present_address" class="col-md-4 col-form-label text-md-right">Rua:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control" ng-model="rua" required>
+                                        <input type="text" placeholder="Novo Sol" pattern="[a-zA-Z\s]+$" class="form-control" ng-model="rua" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="present_address" class="col-md-4 col-form-label text-md-right">Complemento:</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control" ng-model="complemento" required>
+                                        <input type="text" placeholder="Exemplo: número da casa, tipo..." class="form-control" ng-model="complemento" required>
                                     </div>
                                 </div>
 
