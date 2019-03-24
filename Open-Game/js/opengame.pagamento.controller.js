@@ -43,7 +43,7 @@ angular.module('app').controller('pagamentoCtrl', ['$scope','$firebaseStorage', 
                     To : emailDestino,
                     From : "fabricio.tarden@al.infnet.edu.br",
                     Subject : "OPEN GAME - Impressões 3D - Pagamento",
-                    Body : "PARABÉNS! Seu pagamento foi confirmado!"
+                    Body : "PARABÉNS!!! Seu pagamento foi confirmado! Seu pedido será enviado em dois dias. [OPEN GAME - EQUIPE]"
 
               }).then(
                   message => console.log(message)
